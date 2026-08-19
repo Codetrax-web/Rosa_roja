@@ -14,12 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const endText = document.getElementById('endText');
     const fallingPetalsEl = document.getElementById('fallingPetals');
     const scene = document.querySelector('.scene');
+    const music = document.getElementById('music'); // referencia al audio
 
-    // Música
-        music.volume = 0.4;
-        music.play().catch(() => {
-            console.log("La música necesita interacción");
-        });
+    // Ajustar volumen, pero NO reproducir automáticamente (el navegador lo bloquea)
+    if (music) music.volume = 0.4;
 
     const PETAL_LAYERS = [
         { count: 4, w: 24, h: 46, curl: 78, delayBase: 0, tz: 2, cls: 'petal-bud' },
@@ -216,6 +214,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startButton.addEventListener('click', () => {
         triggerOverlay.classList.add('fade-out');
+
+        // reproducir música con gesto de usuario (evita bloqueo por autoplay)
+        if (music) {
+            music.play().catch(() => {
+                console.log("La música necesita interacción");
+            });
+        }
 
         setTimeout(() => {
             startAnimationSequence();
