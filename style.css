@@ -651,3 +651,33 @@ body {
         bottom: 3%;
     }
 }
+/* Estrellas fugaces de fondo */
+.shooting-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 100, 150, 0.5), transparent);
+    transform: rotate(-45deg);
+    opacity: 0;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+    animation: shoot linear forwards;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-350px) translateY(350px) rotate(-45deg) scale(1);
+        opacity: 0;
+    }
+}
