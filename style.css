@@ -189,40 +189,42 @@ body {
 }
 
 /* Updated button appearance per user request */
-.startButton {
-  background: linear-gradient(180deg, #b00022, #960018);
-  color: #ffffff;
-  border: 1px solid #64000f;
-  box-shadow: 0 6px 14px rgba(150, 0, 24, 0.25);
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s;
+.start-button {
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff2e5e 0%, #ff0044 100%);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+    box-shadow: 0 5px 20px rgba(255, 0, 68, 0.3);
 }
 
-.startButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(150, 0, 24, 0.30);
-  filter: brightness(1.03);
-
+.start-button:disabled {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none !important;
 }
 
-.startButton:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 12px rgba(120, 0, 18, 0.25);
-
+.start-button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(255, 0, 68, 0.5),
+        0 0 15px rgba(255, 50, 90, 0.3);
 }
 
-.startButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  filter: grayscale(0.05);
-
-}
-
-.startButton:focus {
-  outline: 3px solid rgba(184, 0, 34, 0.18);
-  outline-offset: 2px;
+.start-button:active {
+    transform: translateY(1px);
 }
 
 .btn-shine {
