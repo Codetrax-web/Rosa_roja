@@ -134,16 +134,6 @@ body {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Wave-style loading bar */
 .loading-bar-container {
     width: 100%;
@@ -199,46 +189,37 @@ body {
 }
 
 /* Updated button appearance per user request */
-.start-button {
-    position: relative;
-    width: 100%;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #ffffff80;
-    text-shadow: none;
-    background: transparent;
-    cursor: pointer;
-    box-shadow: transparent;
-    border: 1px solid #ffffff80;
-    transition: 0.5s ease;
-    user-select: none;
-    overflow: hidden;
+.startButton {
+  background: linear-gradient(180deg, #b00022, #960018);
+  color: #ffffff;
+  border: 1px solid #64000f;
+  box-shadow: 0 6px 14px rgba(150, 0, 24, 0.25);
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s;
 }
 
-/* Hover & focus state adapted to the start-button */
-.start-button:hover,
-.start-button:focus {
-    color: #ffffff;
-    background: #008cff;
-    border: 1px solid #008cff;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-        0 0 100px #008cff;
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(150, 0, 24, 0.30);
+  filter: brightness(1.03);
 }
 
-.start-button:disabled {
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.3);
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none !important;
+.startButton:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(120, 0, 18, 0.25);
 }
 
-.start-button:active {
-    transform: translateY(1px);
+.startButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.05);
+}
+
+.startButton:focus {
+  outline: 3px solid rgba(184, 0, 34, 0.18);
+  outline-offset: 2px;
 }
 
 .btn-shine {
