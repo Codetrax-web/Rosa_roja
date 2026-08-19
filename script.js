@@ -141,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function spawnFallingPetal() {
-        if (fallingPetalsEl.childElementCount > 10) return;
+        // Allow more petals simultaneously (increase from 10 to 30)
+        if (fallingPetalsEl.childElementCount > 30) return;
 
         const petal = document.createElement('div');
         petal.className = 'falling-petal';
@@ -182,13 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startFallingPetals() {
-        for (let i = 0; i < 3; i++) {
-            setTimeout(() => spawnFallingPetal(), i * 300);
+        // initial burst: increase from 3 to 8 petals
+        for (let i = 0; i < 8; i++) {
+            setTimeout(() => spawnFallingPetal(), i * 200);
         }
 
+        // spawn more frequently: interval reduced from 2200ms to 900ms
         fallingPetalInterval = setInterval(() => {
             spawnFallingPetal();
-        }, 2200);
+        }, 900);
     }
 
 
