@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fallingPetalsEl = document.getElementById('fallingPetals');
     const scene = document.querySelector('.scene');
 
+    // Música
+        music.volume = 0.4;
+        music.play().catch(() => {
+            console.log("La música necesita interacción");
+        });
+
     const PETAL_LAYERS = [
         { count: 4, w: 24, h: 46, curl: 78, delayBase: 0, tz: 2, cls: 'petal-bud' },
         { count: 5, w: 34, h: 58, curl: 65, delayBase: 0.25, tz: 9, cls: 'petal-core' },
