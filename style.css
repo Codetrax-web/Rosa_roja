@@ -1,4 +1,4 @@
-*,
+* ,
 *::before,
 *::after {
     margin: 0;
@@ -153,23 +153,35 @@ body {
     margin-bottom: 26px;
 }
 
+/* Updated button appearance per user request */
 .start-button {
     position: relative;
     width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, #ff2e5e 0%, #ff0044 100%);
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1.5px;
+    padding: 10px 20px;
     text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
     cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
-    box-shadow: 0 5px 20px rgba(255, 0, 68, 0.3);
+}
+
+/* Hover & focus state adapted to the start-button */
+.start-button:hover,
+.start-button:focus {
+    color: #ffffff;
+    background: #008cff;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+        0 0 100px #008cff;
 }
 
 .start-button:disabled {
@@ -178,13 +190,6 @@ body {
     cursor: not-allowed;
     box-shadow: none;
     transform: none !important;
-}
-
-.start-button:not(:disabled):hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 8px 25px rgba(255, 0, 68, 0.5),
-        0 0 15px rgba(255, 50, 90, 0.3);
 }
 
 .start-button:active {
