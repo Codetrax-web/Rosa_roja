@@ -277,7 +277,6 @@ body {
     width: 10px;
     height: 250px;
     transform-style: preserve-3d;
-    perspective: 800px;
 }
 
 .stem {
@@ -286,16 +285,31 @@ body {
     left: 0;
     width: 100%;
     height: 0%;
-    background: linear-gradient(to top, #092e12 0%, #114c23 30%, #1a6f35 70%, #114c23 100%);
+    background: linear-gradient(90deg, 
+        #092e12 0%, 
+        #114c23 25%, 
+        #1a6f35 50%, 
+        #114c23 75%, 
+        #092e12 100%);
     border-radius: 5px;
     transition: height 2.2s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: hidden;
     will-change: height;
-    transform-style: preserve-3d;
-    box-shadow: 
-        inset -3px 0 8px rgba(0, 0, 0, 0.5),
-        inset 3px 0 8px rgba(255, 255, 255, 0.08),
-        0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    /* SOMBRA 3D */
+    filter: drop-shadow(-1px 2px 3px rgba(0, 0, 0, 0.6));
+}
+
+/* Agregar pseudo-elemento para profundidad */
+.stem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 50%, rgba(0, 0, 0, 0.15));
+    pointer-events: none;
 }
 
 .stem.grow {
