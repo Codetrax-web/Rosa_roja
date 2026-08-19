@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const SEPALS_COUNT = 5;
 
     const FALLING_PETAL_COLORS = [
-        ['#9a001d', '#3d0008'],
-        ['#850018', '#2b0005'],
-        ['#ad0022', '#480008'],
-        ['#bf0028', '#52000c'],
-    ];
+    ['#960018', '#4a0006'], // carmín base + sombra
+    ['#b00022', '#5a0008'], // carmín más brillante + sombra
+    ['#d0002a', '#6b000c'], // carmín intenso + sombra
+    ['#a10020', '#3a0006'], // carmín moderado + sombra
+];
 
     let fallingPetalInterval = null;
 
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function startCardLoader() {
         const duration = 2400;
         const steps = [
-            { threshold: 20, text: 'Loading Love.css...' },
-            { threshold: 50, text: 'Growing digital petals...' },
-            { threshold: 80, text: 'Adding velvet textures...' },
-            { threshold: 95, text: 'Optimizing 3D rendering...' },
-            { threshold: 100, text: 'Ready to bloom!' }
+            { threshold: 20, text: 'Loading Love....' },
+            { threshold: 50, text: 'Desplegando pétalos de terciopelo...' },
+            { threshold: 80, text: 'Intensificando el rojo carmesí...' },
+            { threshold: 95, text: 'Capturando la esencia de la flor...' },
+            { threshold: 100, text: '¡Tu rosa está lista para florecer!' }
         ];
 
         let startTimestamp = null;
