@@ -215,48 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
             startAnimationSequence();
         }, 800);
     });
-    // Reemplaza los pasos del cargador con tus nuevos textos
-function startCardLoader() {
-    const duration = 2400;
-    const steps = [
-        { threshold: 20, text: 'Cargando magia...' },
-        { threshold: 50, text: 'Preparando algo especial...' },
-        { threshold: 80, text: 'Afinando detalles...' },
-        { threshold: 95, text: 'Casi listo...' },
-        { threshold: 100, text: '¡Listo para florecer!' }
-    ];
-
-    let startTimestamp = null;
-    // ... (resto del código del cargador sin cambios)
-}
-
-// Añade esta función para crear las estrellas fugaces
-function createShootingStars() {
-    const container = document.getElementById('shootingStars');
-    if (!container) return;
-
-    setInterval(() => {
-        const star = document.createElement('div');
-        star.className = 'shooting-star';
-        star.style.top = `${Math.random() * 60}vh`;
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.animationDuration = `${1 + Math.random() * 1.5}s`;
-        container.appendChild(star);
-
-        setTimeout(() => {
-            star.remove();
-        }, 2500);
-    }, 700);
-}
-
-// Dentro del evento DOMContentLoaded, asegúrate de llamar a la función:
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (tus otras llamadas)
-    createShootingStars();
-    createSepals();
-    createPetals();
-    // ...
-});
     createSepals();
     createPetals();
 
