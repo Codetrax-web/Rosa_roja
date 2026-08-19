@@ -277,6 +277,7 @@ body {
     width: 10px;
     height: 250px;
     transform-style: preserve-3d;
+    perspective: 800px;
 }
 
 .stem {
@@ -290,6 +291,11 @@ body {
     transition: height 2.2s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: hidden;
     will-change: height;
+    transform-style: preserve-3d;
+    box-shadow: 
+        inset -3px 0 8px rgba(0, 0, 0, 0.5),
+        inset 3px 0 8px rgba(255, 255, 255, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .stem.grow {
